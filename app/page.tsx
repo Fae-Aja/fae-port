@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
   // --- TARUH LOGIKA ANIMASI DI SINI ---
@@ -84,7 +85,12 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 pt-40 md:pt-56">
           
          {/* --- HERO SECTION (REPLICA STYLE) --- */}
-         <header className="mb-48 pt-20">
+         <motion.header 
+  className="mb-48 pt-20"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
          <div className="flex items-center gap-4 mb-8">
   <div className="w-10 h-[1px] bg-[#B2AC88]"></div>
   <span className="text-[#B2AC88] font-mono text-sm tracking-widest uppercase">
@@ -121,10 +127,17 @@ export default function Home() {
                 Get In Touch
               </a>
             </div>
-          </header>
+            </motion.header>
 
           {/* --- SECTION: BACKGROUND & INTERESTS (SAGE THEME) --- */}
-          <section id="about" className="mb-48 scroll-mt-32">
+          <motion.section 
+  id="about" 
+  className="mb-48 scroll-mt-32"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-100px" }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start mb-32">
               <div className="relative group">
                 <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#1F4E36]/40 rounded-xl -z-10"></div>
@@ -201,25 +214,37 @@ export default function Home() {
 
               </div>
             </div>
-          </section>
+            </motion.section>
 
          
 
 {/* --- EXPERIENCE SECTION --- */}
-<section id="experience" className="py-20"> 
+<section id="experience" className="py-20">
   {/* Isinya yang ada SLiMS tadi */}
 </section>
   {/* Judul Section (Hanya sekali di atas) */}
-  <div className="mb-16">
+ <motion.div
+className="mb-16"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-100px" }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
     <span className="px-3 py-1 border border-[#B2AC88] text-[#B2AC88] text-xs font-mono uppercase tracking-widest">
       Experience
     </span>
     <h2 className="text-5xl font-serif font-bold text-white mt-6 mb-2">Experience & Roles</h2>
     <div className="w-16 h-[2px] bg-[#B2AC88]"></div>
-  </div>
+  </motion.div>
 
   {/* PEMBUNGKUS GARIS (Hanya satu div ini yang punya border-l) */}
-  <div className="relative border-l border-zinc-800 ml-3 md:ml-6">
+  <motion.div 
+        className="relative border-l border-zinc-800 ml-3 md:ml-6"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+      >
     
     {/* --- PENGALAMAN 1 (SLiMS) --- */}
     <div className="relative pl-10 pb-20">
@@ -261,22 +286,35 @@ export default function Home() {
            <Image src="/Lugoh.png" alt="SLiMS" width={500} height={300} className="rounded-sm opacity-80" />
         </div>
       </div>
-    </div>
+      </div> {/* <-- TAMBAHKAN DIV INI DI SINI */}
+      </motion.div>
 
     
     
-  </div> {/* PENUTUP PEMBUNGKUS GARIS */}
+  
 {/* --- ACHIEVEMENTS SECTION --- */}
 <section id="awards" className="py-20">
-  {/* Isinya prestasi lomba-lomba kamu */}
-</section>
-<section className="py-20">
-  <div className="mb-16">
-    <h2 className="text-5xl font-serif font-bold text-white mb-2">Achievements & Recognition</h2>
-    <div className="w-16 h-[2px] bg-amber-500"></div>
-  </div>
+        {/* Judul Achievement */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <h2 className="text-5xl font-serif font-bold text-white mb-2">Achievements & Recognition</h2>
+          <div className="w-16 h-[2px] bg-amber-500"></div>
+        </motion.div>
 
-  <div className="space-y-4">
+        {/* Pembungkus List Prestasi */}
+        <motion.div 
+          className="space-y-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        >
+  
     {[
       {
         title: "1st Place - English Public Speaking Competition",
@@ -316,8 +354,8 @@ export default function Home() {
         </div>
       </div>
     ))}
-  </div>
-</section>
+ </motion.div>
+ </section>
 
 {/* --- PROJECTS SECTION (4 Kolom Kecil) --- */}
 <section id="projects" className="py-20">
@@ -325,17 +363,29 @@ export default function Home() {
 </section>
 <section id="projects" className="py-20 border-t border-zinc-900 mt-20">
   <div className="max-w-7xl mx-auto px-6">
-    <div className="mb-12">
+  <motion.div 
+            className="mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
       <span className="px-3 py-1 border border-[#B2AC88] text-[#B2AC88] text-[10px] font-mono uppercase tracking-[0.3em]">
         Portfolio
       </span>
       <h2 className="text-4xl font-serif font-bold text-white mt-6 mb-2">Projects & Initiatives</h2>
       <div className="w-12 h-[2px] bg-[#1F4E36]"></div>
-    </div>
+      </motion.div>
 
     {/* Grid diubah jadi 4 kolom untuk tampilan desktop */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-      
+    <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
+        {}
       {[
         {
           title: "Digital Library",
@@ -389,8 +439,9 @@ export default function Home() {
         </div>
       ))}
 
-    </div>
-  </div>
+    
+    </motion.div>
+    </div> {/* <-- TAMBAHKAN DIV PENUTUP INI DI SINI */}
 </section>
 
         {/* --- CONTACT SECTION --- */}
