@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Home() {
   // --- TARUH LOGIKA ANIMASI DI SINI ---
   const [greeting, setGreeting] = useState("");
-  const greetings = ["Marhaban", "Halo", "Hello", "Bonjour", "Konnichiwa", "Sugeng Rawuh", "Hi!", "Γειά σου", "Ciao", "Testing Laptop Baru"];
+  const greetings = ["Marhaban", "Halo", "Hello", "Bonjour", "Konnichiwa", "Sugeng Rawuh", "Hi!", "Γειά σου", "Ciao"];
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
